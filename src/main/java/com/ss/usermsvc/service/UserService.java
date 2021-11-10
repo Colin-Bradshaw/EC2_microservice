@@ -24,8 +24,12 @@ public class UserService {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+        //default return for failure
+        User u = new User();
+        u.setEmail("Hi");
+        User[] uarr = new User[]{u};
 
-        return null;
+        return Arrays.asList(uarr);
     }
 
     public List<User> readUsers(String sql, Object[] param) throws SQLException, ClassNotFoundException{
